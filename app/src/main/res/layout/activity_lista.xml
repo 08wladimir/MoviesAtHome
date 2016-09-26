@@ -21,6 +21,44 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/listCartelera"
-        android:layout_below="@+id/txtCartelera"/>
+        android:layout_below="@+id/txtCartelera" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnBluRay"
+        android:text="Blu Ray"
+        android:onClick="bluRay"
+        android:layout_gravity="center"
+        android:layout_weight="5"
+        android:layout_below="@+id/listCartelera"
+        android:background="@color/ColorBoton"
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnBluRay3d"
+        android:text="Blu Ray 3D"
+        android:onClick="bluRay3d"
+        android:layout_gravity="center"
+        android:layout_weight="5"
+        android:layout_toRightOf="@+id/btnBluRay"
+        android:layout_toEndOf="@+id/btnBluRay"
+        android:layout_below="@+id/listCartelera"
+        android:background="@color/ColorIniciar"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnTodos"
+        android:text="Sin Filtro"
+        android:onClick="sinFiltro"
+        android:layout_gravity="center"
+        android:layout_weight="5"
+        android:layout_toRightOf="@+id/btnBluRay3d"
+        android:layout_toEndOf="@+id/btnBluRay3d"
+        android:layout_below="@+id/listCartelera"
+        android:background="@color/ColorBoton"/>
 
 </RelativeLayout>

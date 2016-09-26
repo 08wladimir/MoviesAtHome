@@ -22,18 +22,20 @@ public class ListaActivity extends AppCompatActivity {
 
     Cursor registros;
     //Encapsulo en variables los datos de la pelicula que esta en el do while paa pasarlos por intent al infopelicula
-    String nombrePeli;
-
+    String nombrePeli, nombreUsuario;
+    String consulta;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lista);
 
+        nombreUsuario = getIntent().getStringExtra("nombreUsuario");
+        consulta = getIntent().getStringExtra("consulta");
+
         ArrayList<String> peliculas = new ArrayList<>();
         SQLiteMovieAtHome admin = new SQLiteMovieAtHome(this, "MovieAtHome", null,1);
         SQLiteDatabase db=admin.getWritableDatabase();
-        String q = "SELECT * FROM movie ORDER BY nombre ASC";
-        registros = db.rawQuery(q, null);
+        registros = db.rawQuery(consulta, null);
         if (registros.moveToFirst()) {
             do {
                 peliculas.add(registros.getString(1));
@@ -57,8 +59,33 @@ public class ListaActivity extends AppCompatActivity {
             Intent intent = new Intent(ListaActivity.this, VerActivity.class);
             nombrePeli = textView.getText().toString() ;
             intent.putExtra("nombrePeli", nombrePeli);
+            intent.putExtra("nombreUsuario", nombreUsuario);
             startActivity(intent);
         }
+    }
+
+    public void bluRay(View v){
+        consulta = "SELECT * FROM movie WHERE tipo = 'Blu Ray' AND (disponible > 0)";
+        Intent intent = new Intent(ListaActivity.this, ListaActivity.class);
+        intent.putExtra("nombreUsuario", nombreUsuario);
+        intent.putExtra("consulta", consulta);
+        startActivity(intent);
+    }
+
+    public void bluRay3d(View v){
+        consulta = "SELECT * FROM movie WHERE tipo = 'Blu Ray 3D' AND (disponible > 0)";
+        Intent intent = new Intent(ListaActivity.this, ListaActivity.class);
+        intent.putExtra("nombreUsuario", nombreUsuario);
+        intent.putExtra("consulta", consulta);
+        startActivity(intent);
+    }
+
+    public void sinFiltro(View v){
+        consulta = "SELECT * FROM movie WHERE (disponible > 0) ORDER BY nombre ASC";
+        Intent intent = new Intent(ListaActivity.this, ListaActivity.class);
+        intent.putExtra("nombreUsuario", nombreUsuario);
+        intent.putExtra("consulta", consulta);
+        startActivity(intent);
     }
 
 }

@@ -24,6 +24,12 @@ public class DBMoviesAtHome {
     public static final String disponible = "disponible";
     public static final String imagen = "imagen";
 
+    public static final String reserva = "reserva";
+    public static final String pelicula = "pelicula";
+    public static final String reservado = "reservado";
+    public static final String dias = "dias";
+    public static final String precio = "precio";
+
     public static final String tblUser = "CREATE TABLE "+user+" ("
             +codigo+" VARCHAR(15) PRIMARY KEY NOT NULL, "
             +nombre+ " VARCHAR(15) NOT NULL,"
@@ -42,5 +48,11 @@ public class DBMoviesAtHome {
             +tipo+ " VARCHAR(15) NOT NULL,"
             +disponible+ " VARCHAR(15) NOT NULL,"
             +imagen+ " VARCHAR(15) NOT NULL);";
+
+    public static final String tblReserva = "CREATE TABLE "+reserva+" ("
+            +pelicula+" VARCHAR(20) PRIMARY KEY NOT NULL, "
+            +reservado+ " VARCHAR(15) NOT NULL,"
+            +dias+ " VARCHAR(15) NOT NULL,"
+            +precio+ " VARCHAR(15) NOT NULL);";
 
 }

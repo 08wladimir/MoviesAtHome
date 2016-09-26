@@ -19,6 +19,7 @@
         <activity android:name=".InicioActivity"></activity>
         <activity android:name=".ListaActivity"></activity>
         <activity android:name=".VerActivity"></activity>
+        <activity android:name=".ReservaActivity"></activity>
     </application>
 
 </manifest>

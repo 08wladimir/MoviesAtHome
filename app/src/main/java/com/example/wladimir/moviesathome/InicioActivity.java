@@ -8,7 +8,9 @@ import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 /**
@@ -17,6 +19,7 @@ import android.widget.Toast;
 public class InicioActivity extends AppCompatActivity {
 
     private EditText edit1, edit2;
+    String consulta;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +32,9 @@ public class InicioActivity extends AppCompatActivity {
     }
 
     public void iniciar(View v) {
+
+        consulta = "SELECT * FROM movie WHERE (disponible > 0) ORDER BY nombre ASC";
+
         SQLiteMovieAtHome admin = new SQLiteMovieAtHome(this,"MovieAtHome", null, 1);
         SQLiteDatabase bd = admin.getWritableDatabase();
 
@@ -44,7 +50,11 @@ public class InicioActivity extends AppCompatActivity {
 
             builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
                 public void onClick(DialogInterface dialog, int id) {
+                    EditText textView = (EditText) findViewById(R.id.editUser);
                     Intent intent = new Intent(getApplicationContext(), ListaActivity.class);
+                    String nombreUsuario = textView.getText().toString() ;
+                    intent.putExtra("nombreUsuario", nombreUsuario);
+                    intent.putExtra("consulta", consulta);
                     startActivity(intent);
                 }
             });

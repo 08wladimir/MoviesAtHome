@@ -70,6 +70,37 @@
         tools:text="Niño mago que es el heredero"
         android:textSize="15dp"/>
 
+    <TextView
+        android:id="@+id/txtDiasReserva"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Dias de reserva:"
+        android:layout_above="@+id/button"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="50dp" />
+    <EditText
+        android:id="@+id/editDiasReserva"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:layout_alignTop="@+id/txtDiasReserva"
+        android:layout_toRightOf="@+id/txtDiasReserva"
+        android:layout_toEndOf="@+id/txtDiasReserva"
+        android:inputType="number">
+    </EditText>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/ColorIniciar"
+        android:text="Reservar"
+        android:onClick="reserva"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/button" />
+
 
 
 </RelativeLayout>
