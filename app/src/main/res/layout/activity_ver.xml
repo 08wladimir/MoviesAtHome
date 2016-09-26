@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:minHeight="?attr/listPreferredItemHeight"
+    android:orientation="vertical"
+    android:paddingBottom="8dp"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="8dp">
+
+    <ImageView
+        android:id="@+id/imagen"
+        android:layout_width="120dp"
+        android:layout_height="150dp"
+        android:src="@drawable/superman"/>
+
+    <TextView
+        android:id="@+id/nombre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/imagen"
+        android:layout_toEndOf="@+id/imagen"
+        tools:text="Harry Potter"
+        android:textSize="25dp"/>
+
+    <TextView
+        android:id="@+id/estreno"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/imagen"
+        android:layout_toEndOf="@+id/imagen"
+        android:layout_below="@+id/nombre"
+        tools:text="01/07/2016" />
+
+    <TextView
+        android:id="@+id/tipo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/imagen"
+        android:layout_toEndOf="@+id/imagen"
+        android:layout_below="@+id/estreno"
+        tools:text="Blu Ray 3D" />
+
+    <TextView
+        android:id="@+id/duracion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/imagen"
+        android:layout_toEndOf="@+id/imagen"
+        android:layout_below="@+id/tipo"
+        tools:text="1:30:23" />
+
+    <TextView
+        android:id="@+id/calificacion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/imagen"
+        android:layout_toEndOf="@+id/imagen"
+        android:layout_below="@+id/duracion"
+        tools:text="Estrellas: 0" />
+
+    <TextView
+        android:id="@+id/sinopsis"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imagen"
+        tools:text="Niño mago que es el heredero"
+        android:textSize="15dp"/>
+
+
+
+</RelativeLayout>
